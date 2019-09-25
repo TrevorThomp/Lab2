@@ -1,5 +1,1 @@
-### Lab2 About me App
-
-# About Me
-
-This is an app that quizzes the user on who I am.
+This repository contains Lab2: About me Guessing Game.

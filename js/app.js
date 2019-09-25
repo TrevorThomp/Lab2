@@ -1,16 +1,16 @@
 'use strict';
 
-// // Welcomes and greets the user
+// // // Welcomes and greets the user
 var user = prompt('What is your name?');
 var welcome = alert('Welcome ' + user + '!');
 var userGreeting = alert('I hope you enjoy my game ' + user + '. Let\'s see if you know some things about me!')
 
-// // About Me Guessing Game
+// // // About Me Guessing Game
 var correctAnswers = 0;
 var question;
 var answer;
 var abbreviatedAnswer;
-var response;
+var response = [];
 
 var quiz = [
     ['Do I like to snowboard?', 'YES', 'Y'],
@@ -20,12 +20,14 @@ var quiz = [
     ['Do I own any pets?', 'NO', 'Y']
 ];
 
+// Loops through array prompting questions 
 for (var i = 0; i < quiz.length; i++) {
     question = quiz[i][0];
     answer = quiz[i][1];
     abbreviatedAnswer = quiz[i][2];
-    response = prompt(question);
-        if (response.toUpperCase() === answer || response.toUpperCase() === abbreviatedAnswer) {
+    //Stores responses into response array
+    response.push(prompt(question));
+        if (response[i].toUpperCase() === answer || response[i].toUpperCase() === abbreviatedAnswer) {
             alert('You got that right!')
             correctAnswers++;
         } else {
@@ -33,17 +35,15 @@ for (var i = 0; i < quiz.length; i++) {
         }
 }
 
-
 // //Random number guessing question
 var number = Math.floor(Math.random() * 11);
-console.log(number)
 var userGuess = false;
 var count = 0;
 
+// Loop continues while userGuess remains false and count is less than 4
 while ( (!userGuess) && (count < 4) ) {
     var guessNumber = prompt('Guess a number 1-10');
     var tries;
-   
     if (parseInt(guessNumber) === number) {
         userGuess = true;
         correctAnswers++;

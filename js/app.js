@@ -1,70 +1,102 @@
 'use strict';
-// Welcomes and greets the user
+// // Welcomes and greets the user
 
 var user = prompt('What is your name?');
 var welcome = alert('Welcome ' + user + '!');
 var userGreeting = alert('I hope you enjoy my game ' + user + '. Let\'s see if you know some things about me!')
 
-// About Me Guessing Game
+// // About Me Guessing Game
 
-var counter = 0;
+// var counter = 0;
 
-var snowBoarding = prompt('Do I like to snowboard?');
+// var snowBoarding = prompt('Do I like to snowboard?');
 
-if (snowBoarding.toUpperCase() === "YES" || snowBoarding.toUpperCase() === "Y") {
-    // console.log('You got that right!')
-    alert('You got that right!')
-    counter++;
-} else {
-    // console.log('Unfortunately, that\'s not correct');
-    alert('Unfortunately, that\'s not correct');
+// if (snowBoarding.toUpperCase() === "YES" || snowBoarding.toUpperCase() === "Y") {
+//     // console.log('You got that right!')
+//     alert('You got that right!')
+//     counter++;
+// } else {
+//     // console.log('Unfortunately, that\'s not correct');
+//     alert('Unfortunately, that\'s not correct');
+// }
+
+// var coding = prompt('Do I like to code?');
+
+// if (coding.toUpperCase() === "YES" || coding.toUpperCase() === "Y") {
+//     // console.log('You got that right!')
+//     alert('You got that right!')
+//     counter++;
+// } else {
+//     // console.log('Unfortunately, that\'s not correct');
+//     alert('Unfortunately, that\'s not correct');
+// }
+
+// var outdoors = prompt('Do I enjoy the outdoors?');
+
+// if (outdoors.toUpperCase() === "YES" || outdoors.toUpperCase() === "Y") {
+//     // console.log('You got that right!')
+//     alert('You got that right!')
+//     counter++;
+// } else {
+//     // console.log('Unfortunately, that\'s not correct');
+//     alert('Unfortunately, that\'s not correct');
+// }
+
+// var home = prompt('Do I currently live in Redmond?');
+
+// if (home.toUpperCase() === "YES" || home.toUpperCase() === "Y") {
+//     // console.log('Unfortunately, that\'s not correct');
+//     alert('Unfortunately, that\'s not correct');
+// } else {
+//     // console.log('You got that right!')
+//     alert('You got that right!')
+//     counter++;
+// }
+
+// var pets = prompt('Do I own any pets?');
+
+// if (pets.toUpperCase() === "YES" || pets.toUpperCase() === "Y") {
+//     // console.log('Unfortunately, that\'s not correct');
+//     alert('Unfortunately, that\'s not correct');
+// } else {
+//     // console.log('You got that right!')
+//     alert('You got that right!')
+//     counter++;
+// }
+
+
+
+
+
+var correctAnswers = 0;
+var question;
+var answer;
+var abbreviatedAnswer;
+var response;
+
+var quiz = [
+    ['Do I like to snowboard?', 'YES', 'Y'],
+    ['Do I like to code?', 'YES', 'Y'],
+    ['Do I enjoy the outdoors?', 'YES', 'Y'],
+    ['Do I currently live in Redmond?', 'NO', 'Y'],
+    ['Do I own any pets?', 'NO', 'Y']
+];
+
+for (var i = 0; i < quiz.length; i++) {
+    question = quiz[i][0];
+    answer = quiz[i][1];
+    abbreviatedAnswer = quiz[i][2];
+    response = prompt(question);
+        if (response.toUpperCase() === answer || response.toUpperCase() === abbreviatedAnswer) {
+            alert('You got that right!')
+            correctAnswers++;
+        } else {
+            alert('Unfortunately, that\'s not correct.')
+        }
 }
 
-var coding = prompt('Do I like to code?');
 
-if (coding.toUpperCase() === "YES" || coding.toUpperCase() === "Y") {
-    // console.log('You got that right!')
-    alert('You got that right!')
-    counter++;
-} else {
-    // console.log('Unfortunately, that\'s not correct');
-    alert('Unfortunately, that\'s not correct');
-}
-
-var outdoors = prompt('Do I enjoy the outdoors?');
-
-if (outdoors.toUpperCase() === "YES" || outdoors.toUpperCase() === "Y") {
-    // console.log('You got that right!')
-    alert('You got that right!')
-    counter++;
-} else {
-    // console.log('Unfortunately, that\'s not correct');
-    alert('Unfortunately, that\'s not correct');
-}
-
-var home = prompt('Do I currently live in Redmond?');
-
-if (home.toUpperCase() === "YES" || home.toUpperCase() === "Y") {
-    // console.log('Unfortunately, that\'s not correct');
-    alert('Unfortunately, that\'s not correct');
-} else {
-    // console.log('You got that right!')
-    alert('You got that right!')
-    counter++;
-}
-
-var pets = prompt('Do I own any pets?');
-
-if (pets.toUpperCase() === "YES" || pets.toUpperCase() === "Y") {
-    // console.log('Unfortunately, that\'s not correct');
-    alert('Unfortunately, that\'s not correct');
-} else {
-    // console.log('You got that right!')
-    alert('You got that right!')
-    counter++;
-}
-
-
+// //Random number guessing question
 
 var number = Math.floor(Math.random() * 11);
 console.log(number)
@@ -78,7 +110,7 @@ while ( (!userGuess) && (count < 4) ) {
    
     if (parseInt(guessNumber) === number) {
         userGuess = true;
-        counter++;
+        correctAnswers++;
         alert('You guessed it!')
     } else if (parseInt(guessNumber) < number){
         alert('Too low! Try again.')
@@ -95,6 +127,7 @@ while ( (!userGuess) && (count < 4) ) {
 };
 
 
+// 7th Question with multiple possible answers
 var answers = ['JUPITER', 'MARS', 'NEPTUNE', 'SATURN', 'VENUS', 'EARTH'];
 var attempt = 6;
 
@@ -102,7 +135,7 @@ for (var i = 0; i < 6; i++) {
     var planetQuestion = prompt('What is one of the planets in our solar system');
     if (planetQuestion.toUpperCase() === answers[i]) {
         alert('Congratulations you got it correct! These were all the possible answers: ' + answers.toString());
-        counter++;
+        correctAnswers++;
         break;
     } else {
         attempt--;
@@ -116,9 +149,9 @@ for (var i = 0; i < 6; i++) {
 
 
 
-if (counter >= 5) {
-    alert('Awesome ' + user + '!' + ' You got ' + counter + ' out of 7 correct!')
+// If statement alerting the user how many questions they got correct.
+if (correctAnswers >= 5) {
+    alert('Awesome ' + user + '!' + ' You got ' + correctAnswers + ' out of 7 correct!')
 } else {
-    alert('Too bad ' + user + ',' + ' You only got ' + counter + ' out of 7 correct!')
+    alert('Too bad ' + user + ',' + ' You only got ' + correctAnswers + ' out of 7 correct!')
 }
-

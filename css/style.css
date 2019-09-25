@@ -13,6 +13,7 @@ li {
     padding: 5px;
 }
 
+
 h1 {
     text-transform: uppercase;
     text-align: center;
@@ -43,6 +44,7 @@ h1 {
 .degree {
     margin-left: 40px;
 }
+
 
 #biography {
     display: flex;

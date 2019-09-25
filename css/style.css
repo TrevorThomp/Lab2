@@ -14,13 +14,11 @@ li {
     transition: 0.5s;
 }
 
-
 h1 {
     text-transform: uppercase;
     text-align: center;
     margin: 20px 0;
 }
-
 
 .about {
     background-color: rgb(224, 214, 214);
@@ -47,11 +45,9 @@ h1 {
     padding-bottom: 10px;
 }
 
-
 .degree {
     margin-left: 40px;
 }
-
 
 #biography {
     display: flex;

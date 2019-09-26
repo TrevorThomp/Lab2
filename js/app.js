@@ -65,27 +65,19 @@ while ( (!userGuess) && (count < 4) ) {
 
 // 7th Question with multiple possible answers
 var answers = ['JUPITER', 'MARS', 'NEPTUNE', 'SATURN', 'VENUS', 'EARTH'];
-var attempt = 6;
+var attempt = 0;
 var userGuess2 = false;
 
-while (attempt >= 6) {
+while (attempt < 6 && userGuess2 === false) {
     var questionResponse = prompt('What is one of the planets in our solar system?');
-
-    for (var i = 0; i < 6; i++) { 
+    for (var i = 0; i < answers.length -1; i++) {
         if (questionResponse.toUpperCase() === answers[i]) {
-            alert('Congratulations you got it correct! These were all the possible answers: ' + answers);
-            correctAnswers++;
+            alert('Congratulations you got it correct! These were all the possible answers: ' + answers)
             userGuess2 = true;
-            break; 
+            correctAnswers++;
         }
-
-        } if (userGuess2 === false) {
-            attempt--;
-            alert('Unfortunately, that is not correct. You have ' + attempt + ' attempts left')
-        } if(attempt === 0) {
-            alert('You have run out of attempts. The possible answers were ' + answers.toString());
-            break;
-        }
+    }
+    attempt++;
 }
 
 // Alerts the user how many questions they got correct.

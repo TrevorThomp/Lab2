@@ -1,11 +1,11 @@
 'use strict';
 
-// Welcomes and greets the user
+// // Welcomes and greets the user
 var user = prompt('What is your name?');
 var welcome = alert('Welcome ' + user + '!');
 var userGreeting = alert('I hope you enjoy my game ' + user + '. Let\'s see if you know some things about me!')
 
-// About Me Guessing Game
+// // About Me Guessing Game
 var correctAnswers = 0;
 var question;
 var answer;
@@ -35,7 +35,7 @@ for (var i = 0; i < quiz.length; i++) {
         }
 }
 
-// Random number guessing question
+// // Random number guessing question
 var number = Math.floor(Math.random() * 11);
 var userGuess = false;
 var count = 0;
@@ -65,24 +65,35 @@ while ( (!userGuess) && (count < 4) ) {
 
 // 7th Question with multiple possible answers
 var answers = ['JUPITER', 'MARS', 'NEPTUNE', 'SATURN', 'VENUS', 'EARTH'];
-var questionResponse = [];
 var attempt = 6;
+var userGuess2 = false;
 
-for (var i = 0; i < 6; i++) {
-    questionResponse.push(prompt('What is one of the planets in our solar system?'));
-    if (questionResponse[i].toUpperCase() === answers[i]) {
-        alert('Congratulations you got it correct! These were all the possible answers: ' + answers.toString());
-        correctAnswers++;
-        break;
-    } else {
-        attempt--;
-        alert('Unfortunately, that is not correct. You have ' + attempt + ' attempts left')
-    }
-    if(attempt === 0) {
-        alert('You have run out of attempts. The possible answers were ' + answers.toString());
-        break;
-    }
+while (attempt >= 6) {
+    var questionResponse = prompt('What is one of the planets in our solar system?');
+
+
+    for (var i = 0; i < 6; i++) { 
+        if (questionResponse.toUpperCase() === answers[i]) {
+            alert('Congratulations you got it correct! These were all the possible answers: ' + answers);
+            correctAnswers++;
+            userGuess2 = true;
+            break; 
+        }
+        
+        } if (userGuess2 === false) {
+            attempt--;
+            alert('Unfortunately, that is not correct. You have ' + attempt + ' attempts left')
+        } 
+         if(attempt === 0) {
+            alert('You have run out of attempts. The possible answers were ' + answers.toString());
+            break;
+        }
+    
+    
 }
+
+
+
 
 // Alerts the user how many questions they got correct.
 if (correctAnswers >= 5) {

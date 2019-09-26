@@ -78,17 +78,14 @@ while (attempt >= 6) {
             userGuess2 = true;
             break; 
         }
-        
+
         } if (userGuess2 === false) {
             attempt--;
             alert('Unfortunately, that is not correct. You have ' + attempt + ' attempts left')
-        } 
-         if(attempt === 0) {
+        } if(attempt === 0) {
             alert('You have run out of attempts. The possible answers were ' + answers.toString());
             break;
         }
-    
-    
 }
 
 // Alerts the user how many questions they got correct.

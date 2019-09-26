@@ -71,7 +71,6 @@ var userGuess2 = false;
 while (attempt >= 6) {
     var questionResponse = prompt('What is one of the planets in our solar system?');
 
-
     for (var i = 0; i < 6; i++) { 
         if (questionResponse.toUpperCase() === answers[i]) {
             alert('Congratulations you got it correct! These were all the possible answers: ' + answers);
@@ -91,9 +90,6 @@ while (attempt >= 6) {
     
     
 }
-
-
-
 
 // Alerts the user how many questions they got correct.
 if (correctAnswers >= 5) {

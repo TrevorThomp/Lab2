@@ -1,11 +1,11 @@
 'use strict';
 
-// // // Welcomes and greets the user
+// Welcomes and greets the user
 var user = prompt('What is your name?');
 var welcome = alert('Welcome ' + user + '!');
 var userGreeting = alert('I hope you enjoy my game ' + user + '. Let\'s see if you know some things about me!')
 
-// // // About Me Guessing Game
+// About Me Guessing Game
 var correctAnswers = 0;
 var question;
 var answer;
@@ -35,7 +35,7 @@ for (var i = 0; i < quiz.length; i++) {
         }
 }
 
-// //Random number guessing question
+// Random number guessing question
 var number = Math.floor(Math.random() * 11);
 var userGuess = false;
 var count = 0;
@@ -68,7 +68,7 @@ var answers = ['JUPITER', 'MARS', 'NEPTUNE', 'SATURN', 'VENUS', 'EARTH'];
 var attempt = 6;
 
 for (var i = 0; i < 6; i++) {
-    var planetQuestion = prompt('What is one of the planets in our solar system');
+    var planetQuestion = prompt('What is one of the planets in our solar system?');
     if (planetQuestion.toUpperCase() === answers[i]) {
         alert('Congratulations you got it correct! These were all the possible answers: ' + answers.toString());
         correctAnswers++;
@@ -83,7 +83,7 @@ for (var i = 0; i < 6; i++) {
     }
 }
 
-// If statement alerting the user how many questions they got correct.
+// Alerts the user how many questions they got correct.
 if (correctAnswers >= 5) {
     alert('Awesome ' + user + '!' + ' You got ' + correctAnswers + ' out of 7 correct!')
 } else {

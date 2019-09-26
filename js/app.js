@@ -16,8 +16,8 @@ var quiz = [
     ['Do I like to snowboard?', 'YES', 'Y'],
     ['Do I like to code?', 'YES', 'Y'],
     ['Do I enjoy the outdoors?', 'YES', 'Y'],
-    ['Do I currently live in Redmond?', 'NO', 'Y'],
-    ['Do I own any pets?', 'NO', 'Y']
+    ['Do I currently live in Redmond?', 'NO', 'N'],
+    ['Do I own any pets?', 'NO', 'N']
 ];
 
 // Loops through array prompting questions 
@@ -65,11 +65,12 @@ while ( (!userGuess) && (count < 4) ) {
 
 // 7th Question with multiple possible answers
 var answers = ['JUPITER', 'MARS', 'NEPTUNE', 'SATURN', 'VENUS', 'EARTH'];
+var questionResponse = [];
 var attempt = 6;
 
 for (var i = 0; i < 6; i++) {
-    var planetQuestion = prompt('What is one of the planets in our solar system?');
-    if (planetQuestion.toUpperCase() === answers[i]) {
+    questionResponse.push(prompt('What is one of the planets in our solar system?'));
+    if (questionResponse[i].toUpperCase() === answers[i]) {
         alert('Congratulations you got it correct! These were all the possible answers: ' + answers.toString());
         correctAnswers++;
         break;

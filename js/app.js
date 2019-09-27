@@ -12,8 +12,6 @@ function start(){
     totalCorrect();
 }
 
-start();
-
 function welcome() {
     var welcome = alert('Welcome ' + user + '!');
     var userGreeting = alert('I hope you enjoy my game ' + user + '. Let\'s see if you know some things about me!')
@@ -27,7 +25,7 @@ function guessingGame(){
     var abbreviatedAnswer;
     var response = [];
 
-    var quiz = [
+    var quiz = [    
         ['Do I like to snowboard?', 'YES', 'Y'],
         ['Do I like to code?', 'YES', 'Y'],
         ['Do I enjoy the outdoors?', 'YES', 'Y'],
@@ -101,7 +99,6 @@ function planets(){
         attempt++;
     }
 }
-
 
 // Alerts the user how many questions they got correct.
 function totalCorrect(){

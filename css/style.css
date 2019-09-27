@@ -2,10 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
 }
 
 body {
-    background-color: rgb(230, 215, 215);
+    background-color: rgb(5, 5, 5);
 }
 
 li {
@@ -15,14 +16,16 @@ li {
 }
 
 h1 {
+    color: rgb(255, 255, 255);
     text-transform: uppercase;
     text-align: center;
-    margin: 20px 0;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
 .about {
     background-color: rgb(224, 214, 214);
-    box-shadow: 8px 8px 15px black;
+    box-shadow: 8px 8px 15px rgb(224, 228, 17);
     padding: 15px;
     margin: 15px;
     border: 1px solid black;
@@ -49,6 +52,10 @@ h1 {
     margin-left: 40px;
 }
 
+.quiz {
+    text-align: center;
+}
+
 #biography {
     display: flex;
     flex-direction: column;
@@ -58,12 +65,27 @@ h1 {
     width: 75%;
 }
 
+#button {
+    padding: 35px 65px;
+    margin: 50px auto;
+    transition: 0.7s ease-in-out;
+    border-radius: 10px;
+}
+
+#button:hover {
+    font-size: 1em;
+    cursor: pointer;
+    transform: rotate(360deg) scale(1.1);
+    background-color: rgb(199, 92, 209);
+    color: white;
+}
+
 @media (min-width: 768px) {
     
     #biography {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        grid-gap: 20px;
+        grid-gap: 40px;
     }
 }

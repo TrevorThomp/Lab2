@@ -25,7 +25,7 @@ h1 {
 
 .about {
     background-color: rgb(224, 214, 214);
-    box-shadow: 8px 8px 15px rgb(224, 228, 17);
+    box-shadow: 8px 8px 15px rgb(199, 92, 209);
     padding: 15px;
     margin: 15px;
     border: 1px solid black;
@@ -63,6 +63,18 @@ h1 {
     align-items: center;
     margin: 0 auto;
     width: 75%;
+}
+
+#heading {
+    text-shadow:
+    0 0 5px #fff,
+    /* 0 0 10px #fff, */
+    /* 0 0 15px #fff, */
+    0 0 40px rgb(199, 92, 209),
+    0 0 80px rgb(199, 92, 209),
+    0 0 90px rgb(199, 92, 209),
+    0 0 100px rgb(199, 92, 209),
+    0 0 150px rgb(199, 92, 209);
 }
 
 #button {
